@@ -39,13 +39,10 @@ vector<int> input_vertices()
 
 	cout << "Enter the number of vertices: ";
 	cin >> num_of_vert;
-	cout << "Enter the vertices:" << endl;
 
 	for (size_t i = 0; i < num_of_vert; i++)
 	{
-		int v;
-		cin >> v;
-		vertices.push_back(v);
+		vertices.push_back(i);
 	}
 
 	return vertices;
@@ -56,7 +53,8 @@ int main()
 	vector<Edge> edges = input_edges();
 	vector<int> vertices = input_vertices();
 
-	Forest forest = Kruskals_algorithm(edges, vertices);
+	//Forest forest = Kruskals_algorithm(edges, vertices);
+	Forest forest = Prims_algorithm(edges, vertices);
 
 	forest.sort_edges();
 

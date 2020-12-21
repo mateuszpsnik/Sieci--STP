@@ -4,4 +4,4 @@
 
 Forest Kruskals_algorithm(vector<Edge> edges, vector<int> vertices);
 
-Forest Prims_algorithm();
+Forest Prims_algorithm(vector<Edge> edges, vector<int> vertices);

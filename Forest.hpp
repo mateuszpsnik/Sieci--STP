@@ -5,6 +5,7 @@
 class Forest
 {
 public:
+	Forest() {}
 	Forest(const vector<int>& vertices);
 	vector<Edge> edges() { return edg; }
 	vector<Tree> trees_vector() { return trees; }
