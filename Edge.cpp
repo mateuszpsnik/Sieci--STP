@@ -18,3 +18,10 @@ istream& operator>>(istream& in, Edge& e)
 	return in;
 }
 
+bool operator==(const Edge& e1, const Edge& e2)
+{
+	if (e1.dest == e2.dest && e1.src == e2.src && e1.w == e2.w)
+		return true;
+	return false;
+}
+

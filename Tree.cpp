@@ -27,7 +27,7 @@ bool Tree::exists_in_the_tree(int vertex)
 
 bool Tree::exists_in_the_tree(Edge edge)
 {
-	for (Edge element : edg)
+	for (const Edge& element : edg)
 	{
 		if (element == edge)
 			return true;
@@ -45,7 +45,7 @@ bool Tree::connection_exists_in_the_tree(Edge edge)
 	return true;
 }
 
-void Tree::add_egde(Edge e)
+void Tree::add_edge(Edge e)
 {
 	edg.push_back(e);
 
@@ -68,22 +68,22 @@ Tree::Tree(const vector<Edge>& edges)
 {
 	for (const Edge& edge : edges)
 	{
-		add_egde(edge);
+		add_edge(edge);
 	}
 }
 
 Tree::Tree(const Tree& t1, const Tree& t2, const Edge& connector)
 {
 	for (const Edge& e : t1.edg)
-		add_egde(e);
+		add_edge(e);
 
 	for (const Edge& e : t2.edg)
 	{
 		if (!exists_in_the_tree(e))
-			add_egde(e);
+			add_edge(e);
 	}
 
-	add_egde(connector);
+	add_edge(connector);
 }
 
 void Tree::sort_edges()
