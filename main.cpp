@@ -4,6 +4,8 @@
 #include <vector>
 #include "Edge.hpp"
 #include "Tree.hpp"
+#include "algorithms.hpp"
+#include "Forest.hpp"
 
 using std::vector;
 using std::cin;
@@ -30,32 +32,36 @@ vector<Edge> input_edges()
 	return edges;
 }
 
+vector<int> input_vertices()
+{
+	vector<int> vertices;
+	int num_of_vert;
+
+	cout << "Enter the number of vertices: ";
+	cin >> num_of_vert;
+	cout << "Enter the vertices:" << endl;
+
+	for (size_t i = 0; i < num_of_vert; i++)
+	{
+		int v;
+		cin >> v;
+		vertices.push_back(v);
+	}
+
+	return vertices;
+}
+
 int main()
 {
-	int vertices;
-	cout << "Enter the number of vertices: ";
-	cin >> vertices;
-
 	vector<Edge> edges = input_edges();
+	vector<int> vertices = input_vertices();
 
-	Tree t(edges);
+	Forest forest = Kruskals_algorithm(edges, vertices);
 
-	t.sort_edges();
-	t.sort_vertices();
+	forest.sort_edges();
 
-	int begin;
-	int end;
-
-	cout << "begin and end:";
-	cin >> begin >> end;
-
-	for (auto& i : t.vertices())
-		cout << i << " ";
-
-	cout << endl;
-
-	for (auto& e : t.edges())
+	for (const Edge& e : forest.edges())
+	{
 		cout << e << endl;
-
-	cout << "connection exists: " << t.connection_exists_in_the_tree(Edge(begin, end, 1));
+	}
 }

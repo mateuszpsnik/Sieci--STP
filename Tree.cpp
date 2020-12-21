@@ -2,17 +2,6 @@
 #include <vector>
 #include <algorithm>
 
-struct Compare_Edges
-{
-	bool operator() (Edge edge1, Edge edge2)
-	{
-		if (edge1.source() == edge2.source())
-			return edge1.destination() < edge2.destination();
-
-		return edge1.source() < edge2.source();
-	}
-};
-
 // checks if the vertex given as an argument is already
 // in the tree
 bool Tree::exists_in_the_tree(int vertex)
@@ -59,9 +48,17 @@ void Tree::add_edge(Edge e)
 		vert.push_back(destination);
 }
 
+
 void Tree::add_vertex(int v)
 {
 	vert.push_back(v);
+}
+
+Tree::Tree(const int& vertex)
+{
+	vector<int> vect{ vertex };
+
+	vert = vect;
 }
 
 Tree::Tree(const vector<Edge>& edges)
@@ -86,6 +83,7 @@ Tree::Tree(const Tree& t1, const Tree& t2, const Edge& connector)
 	add_edge(connector);
 }
 
+/*
 void Tree::sort_edges()
 {
 	std::sort(edg.begin(), edg.end(), Compare_Edges());
@@ -95,3 +93,5 @@ void Tree::sort_vertices()
 {
 	std::sort(vert.begin(), vert.end());
 }
+*/
+
