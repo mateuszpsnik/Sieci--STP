@@ -15,6 +15,7 @@ public:
 	constexpr int weight() { return w; }
 	friend ostream& operator<<(ostream& out, const  Edge& e);
 	friend istream& operator>>(istream& in, Edge& e);
+	friend bool operator==(const Edge& e1, const Edge& e2);
 private:
 	int src{ 0 };
 	int dest{ 0 };
