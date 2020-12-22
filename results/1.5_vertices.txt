@@ -1,0 +1,17 @@
+Kruskal's algorithm:
+Edges left:
+0 1 1
+0 2 1
+0 4 1
+4 3 1
+Cost: 4
+Time: 0.0009583
+
+Prim's algorithm:
+Edges left:
+0 1 1
+0 2 1
+0 4 1
+4 3 1
+Cost: 4
+Time: 0.0001388

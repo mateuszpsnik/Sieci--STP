@@ -110,7 +110,7 @@ void write_out_results(Forest Kruskal, Forest Prim, double Kruskal_time,
 	output << "Cost: " << cost_K << endl;
 	output << "Time: " << Kruskal_time << endl;
 
-	output << "Prim's algorithm:" << endl;
+	output << endl << "Prim's algorithm:" << endl;
 	output << "Edges left:" << endl;
 
 	for (auto edge : Prim.edges())
