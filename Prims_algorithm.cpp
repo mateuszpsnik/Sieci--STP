@@ -67,9 +67,14 @@ Forest Prims_algorithm(vector<Edge> edges, vector<int> vertices)
 
 		for (auto edge : edges)
 		{
-			if (edge.source() == vertex)
+			if (edge.source() == vertex || edge.destination() == vertex)
 			{
-				int w = edge.destination();
+				int w;
+				if (edge.source() == vertex)
+					w = edge.destination();
+				else
+					w = edge.source();
+
 				if (belongs_to(w, vertices) && edge.weight() < cheapest_connection[w])
 				{
 					cheapest_connection[w] = edge.weight();
