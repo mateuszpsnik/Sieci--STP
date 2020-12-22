@@ -1,0 +1,5 @@
+Edges are displayed in a following form:
+source destination weight
+
+Time: 0.001098 
+means that the algorithm took 0.001098 seconds.

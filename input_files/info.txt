@@ -1,0 +1,6 @@
+Files in this folder are in this form:
+number of vertices
+vertices
+number of edges
+edges in a following form:
+source destination weight
